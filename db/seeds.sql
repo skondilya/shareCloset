@@ -1,1 +1,1 @@
-INSERT INTO dresses
+INSERT INTO dresses (id, user_name, color, size, year, price) VALUES (001, 'person', 'green', 'medium', 2017, 100);

@@ -12,7 +12,6 @@ CREATE TABLE dresses
   size VARCHAR(100) NULL,
   year INT NULL,
   price DECIMAL(10,4) NULL,
-  photo VARCHAR(100) NULL,
   PRIMARY KEY (position)
 );
 
