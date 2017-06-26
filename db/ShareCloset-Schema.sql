@@ -1,6 +1,10 @@
+-- Schema
+
+CREATE DATABASE share_Closetdb;
+
 USE share_Closetdb;
 
-CREATE TABLE share_Closetdb 
+CREATE TABLE dresses 
 (
   id int NOT NULL AUTO_INCREMENT,
   user_name VARCHAR(100) NULL,
@@ -12,5 +16,13 @@ CREATE TABLE share_Closetdb
   PRIMARY KEY (position)
 );
 
-select * from share_Closetdb; 
+CREATE TABLE photos 
+( 
+PhotoID int unsigned not null auto_increment primary key, 
+Filename varchar(255) not null unique, 
+Caption varchar(255) not null, 
+Photo longblob not null 
+); 
+
+select * from dresses; 
 
