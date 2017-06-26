@@ -1,7 +1,10 @@
+// Include React
+var React = require("react");
+
 var ProductsList = React.createClass({
 
 	render : function(){
-		
+
 		var products = this.props.data.map(function(product){
 			return (
 				<li>
@@ -14,3 +17,4 @@ var ProductsList = React.createClass({
 		)
 	}
 })
+

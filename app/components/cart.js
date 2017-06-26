@@ -1,3 +1,6 @@
+// Include React
+var React = require("react");
+
 var Cart = React.createClass({
 
 	getInitialState : function(){
@@ -31,8 +34,9 @@ var Cart = React.createClass({
 			total = total + item.price;
 		})
 		this.setstate({total : total})
-	}
-	render ; function(){
+	},
+
+	render : function(){
 		var items = this.state.items.map(function(item){
 			return (
 				<li key={item.id}>
