@@ -1,5 +1,4 @@
 -- Schema
-
 CREATE DATABASE share_Closetdb;
 
 USE share_Closetdb;

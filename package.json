@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/skondilya/shareCloset#readme",
   "dependencies": {
+<<<<<<< HEAD
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0"
+=======
+    "mysql": "^2.13.0"
+>>>>>>> 8d2d6b395c3270c501b0d7dabe671aed5aa6aa85
   }
 }
