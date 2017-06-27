@@ -13,12 +13,17 @@ var connection = mysql.createConnection({
   // Your password
   password: "",
   database: "share_Closetdb"
-});
 
+});
 
 connection.connect(function(err) {
   if (err) throw err;
-  runSearch();
+  console.log("Connected as id " + connection.threadId);
+});
+
+connection.query("SELECT * FROM dresses", function(err, res) {
+  if (err) throw err;
+  console.log(res);
 });
 
 // Use the GoogleStrategy within Passport.

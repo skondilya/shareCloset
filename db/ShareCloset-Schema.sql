@@ -1,5 +1,4 @@
--- Schema
-CREATE DATABASE share_Closetdb;
+CREATE DATABASE IF NOT EXISTS share_Closetdb;
 
 USE share_Closetdb;
 
@@ -11,16 +10,23 @@ CREATE TABLE dresses
   size VARCHAR(100) NULL,
   year INT NULL,
   price DECIMAL(10,4) NULL,
-  PRIMARY KEY (position)
+  PRIMARY KEY (id)
 );
 
-CREATE TABLE photos 
-( 
-PhotoID int unsigned not null auto_increment primary key, 
-Filename varchar(255) not null unique, 
-Caption varchar(255) not null, 
-Photo longblob not null 
-); 
+INSERT INTO dresses (id, user_name, color, size, year, price) VALUES (001, 'person', 'green', 'medium', 2017, 100);
 
-select * from dresses; 
+
+select * from dresses;
+
+
+-- Photos Table
+-- CREATE TABLE photos 
+-- ( 
+-- PhotoID int unsigned not null auto_increment primary key, 
+-- Filename varchar(255) not null unique, 
+-- Caption varchar(255) not null, 
+-- Photo longblob not null 
+-- ); 
+
+
 
