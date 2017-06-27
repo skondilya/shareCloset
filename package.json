@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/skondilya/shareCloset/issues"
   },
-  "homepage": "https://github.com/skondilya/shareCloset#readme"
+  "homepage": "https://github.com/skondilya/shareCloset#readme",
+  "dependencies": {
+    "mysql": "^2.13.0"
+  }
 }
