@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/skondilya/shareCloset/issues"
   },
-  "homepage": "https://github.com/skondilya/shareCloset#readme"
+  "homepage": "https://github.com/skondilya/shareCloset#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel": "^6.23.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.0.0"
+  }
 }
