@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/skondilya/shareCloset#readme",
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.16.2",
     "babel": "^6.23.0",
     "body-parser": "^1.17.2",
@@ -25,5 +26,13 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "webpack": "^3.0.0"
+=======
+<<<<<<< HEAD
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^1.0.0"
+=======
+    "mysql": "^2.13.0"
+>>>>>>> 8d2d6b395c3270c501b0d7dabe671aed5aa6aa85
+>>>>>>> f911f845e272400aaafef1d577c92603081b46e6
   }
 }
