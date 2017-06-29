@@ -19,9 +19,9 @@ var hashHistory = router.hashHistory;
 var IndexRoute = router.IndexRoute;
 
 //Reference the high-level components
-var Cart = require("../components/cart");
-var ProductFeed = require("../components/Product-feed");
-var Product = require("../components/product");
+var cart = require("../components/cart");
+var productFeed = require("../components/product-feed");
+var product = require("../components/product");
 
 // Export the Routes
 module.exports = (
@@ -29,17 +29,17 @@ module.exports = (
   // The high level component is the Router component
   <Router history={hashHistory}>
 
-    <Route path="/" component={ProductFeed}>
+    <Route path="/" component={productFeed}>
 
       {/* If user selects Child1 then show the appropriate component*/}
-      <Route path="Cart" component={Cart} />
+      <Route path="cart" component={cart} />
 
         {/* Child1 has its own Grandchildren options */}
-        <Route path="Product" component={Product} />
-        <Route path="ProductFeed" component={ProductFeed} />
+        <Route path="product" component={product} />
+        <Route path="productFeed" component={productFeed} />
 
       {/* If user selects any other path... we get the Home Route */}
-      <IndexRoute component={ProductFeed} />
+      <IndexRoute component={productFeed} />
 
     </Route>
     </Router>

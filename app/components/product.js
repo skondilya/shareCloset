@@ -1,7 +1,7 @@
 // Include React
 var React = require("react");
 
-var Product = React.createClass({
+var product = React.createClass({
 
 	render : function(){
 		// const { name, price, currency, image, url, isInCart } = this.props;
@@ -30,4 +30,4 @@ var Product = React.createClass({
 });
 
 // Export the component back for use in other files
-module.exports = Product;
+module.exports = product;

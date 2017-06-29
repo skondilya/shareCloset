@@ -1,7 +1,7 @@
 // Include React
 var React = require("react");
 
-var Cart = React.createClass({
+var cart = React.createClass({
 
 	// getInitialState : function(){
 	// 	return {
@@ -48,4 +48,4 @@ var Cart = React.createClass({
 });
 
 // Export the component back for use in other files
-module.exports = Cart;
+module.exports = cart;

@@ -20,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "inquirer": "^3.1.1",
     "mysql": "^2.13.0",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",

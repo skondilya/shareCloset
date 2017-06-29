@@ -1,7 +1,7 @@
 // Include React
 var React = require("react");
 
-var ProductFeed = React.createClass({
+var productFeed = React.createClass({
 
 	render : function(){
 
@@ -14,6 +14,5 @@ var ProductFeed = React.createClass({
 	}
 });
 
-// Export the component back for use in other files
-module.exports = ProductFeed;
+module.exports = productFeed;
 

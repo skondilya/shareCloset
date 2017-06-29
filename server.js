@@ -1,35 +1,22 @@
-var passport = require('passport');
-var mysql = require("mysql");
-var inquirer = require("inquirer");
-
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-
-  // Your username
-  user: "root",
-
-  // Your password
-  password: "",
-  database: "share_Closetdb"
-
-});
+// Include Server Dependencies
+var express = require("express");
+var bodyParser = require("body-parser");
 
 
-connection.connect(function(err) {
-  if (err) throw err;
-  runSearch();
-});
-=======
+// Create Instance of Express
+var app = express();
+var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
 
-});
+// Run Morgan for Logging
 
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected as id " + connection.threadId);
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-connection.query("SELECT * FROM dresses", function(err, res) {
-  if (err) throw err;
-  console.log(res);
+app.use(express.static("./public"));
+
+
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
 });
