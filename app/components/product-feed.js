@@ -1,23 +1,19 @@
 // Include React
 var React = require("react");
 
-var ProductsList = React.createClass({
+var ProductFeed = React.createClass({
 
 	render : function(){
 
-		var products = this.props.data.map(function(product){
-			return (
-				<li>
-				<Product data={product}>
-				</li>
-				)
-		});
+		// var products = this.props.data.map(function(product){
 		return (
-			<ul>{products}</ul>
-		)
+			<p>Hello World Product-feed!</p>
+		
+		 )
+		
 	}
 });
 
 // Export the component back for use in other files
-module.exports = Product-feed;
+module.exports = ProductFeed;
 
