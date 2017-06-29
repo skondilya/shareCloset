@@ -1,6 +1,4 @@
 var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
-
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
