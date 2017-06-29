@@ -16,5 +16,8 @@ var ProductsList = React.createClass({
 			<ul>{products}</ul>
 		)
 	}
-})
+});
+
+// Export the component back for use in other files
+module.exports = Product-feed;
 

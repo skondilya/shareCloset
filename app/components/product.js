@@ -26,4 +26,7 @@ var ProductsList = React.createClass({
             </div>
 		)
 	}
-})
+});
+
+// Export the component back for use in other files
+module.exports = Product;
