@@ -18,15 +18,19 @@
   },
   "homepage": "https://github.com/skondilya/shareCloset#readme",
   "dependencies": {
-    "axios": "^0.16.2",
-    "babel": "^6.23.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "webpack": "^3.0.0",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "mysql": "^2.13.0"
-  }
+  },
+  "devDependencies": {
+   "babel-core": "^6.3.13",
+   "babel-loader": "^6.2.0",
+   "babel-preset-es2015": "^6.3.13",
+   "babel-preset-react": "^6.3.13",
+   "webpack": "^1.13.1"
+ }
 }
