@@ -21,7 +21,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mysql": "^2.13.0",
-    "passport": "^0.3.2",
+    "passport": "^0.3.2",s
+    
     "passport-google-oauth": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
