@@ -1,15 +1,20 @@
+<<<<<<< HEAD
 // var passport = require('passport');
 // var GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
 var mysql = require("mysql");
 
+=======
+// Include Server Dependencies
+var express = require("express");
+var bodyParser = require("body-parser");
+>>>>>>> master
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
 
-  // Your username
-  user: "root",
+// Create Instance of Express
+var app = express();
+var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
 
+<<<<<<< HEAD
   // Your password
   password: "",
   database: "share_Closetdb"
@@ -73,4 +78,18 @@ connection.query("SELECT * FROM dresses", function(err, res) {
 //        });
 //   }
 // ));
+=======
+// Run Morgan for Logging
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+app.use(express.static("./public"));
+
+>>>>>>> master
+
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
+});

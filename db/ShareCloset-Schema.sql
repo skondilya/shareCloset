@@ -13,6 +13,7 @@ CREATE TABLE dresses
   PRIMARY KEY (id)
 );
 
+<<<<<<< HEAD
 
 INSERT INTO dresses (id, user_name, color, size, year, price) VALUES (001, 'person', 'green', 'medium', 2017, 100);
 
@@ -28,4 +29,22 @@ select * from dresses;
 -- Photo longblob not null 
 -- ); 
 
+=======
+INSERT INTO dresses (id, user_name, color, size, year, price) VALUES (001, 'person', 'green', 'medium', 2017, 100);
+
+
+select * from dresses;
+
+
+-- Photos Table
+-- CREATE TABLE photos 
+-- ( 
+-- PhotoID int unsigned not null auto_increment primary key, 
+-- Filename varchar(255) not null unique, 
+-- Caption varchar(255) not null, 
+-- Photo longblob not null 
+-- ); 
+
+
+>>>>>>> master
 
