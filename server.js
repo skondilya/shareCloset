@@ -23,21 +23,22 @@ app.use(express.static("./public"));
 
 //NEED TO ADD MLAB CONFIGURATION!
 // MongoDB configuration (Change this URL to your own DB)
-mongoose.connect("");
+mongoose.connect("mongodb://heroku_hz1dhlcg:po405n3t0ulo0isdv0g7p7mlt@ds145892.mlab.com:45892/heroku_hz1dhlcg", {useMongoClient: true});
 var db = mongoose.connection;
 
 db.on("error", function(err) {
   console.log("Mongoose Error: ", err);
 });
 
-db.once("open", function() {
+db.once("openUri()", function() {
   console.log("Mongoose Connection Successful ✔");
 });
+
 
 // -------------------------------------------------
 
 
 // Express Server Start Verification
 app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
+  console.log("App listening on PORT: " + PORT + " ✔");
 });
