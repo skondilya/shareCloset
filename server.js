@@ -92,8 +92,6 @@ app.post("/product", function(req, res) {
 });
 
 
-
-
 // Express Server Start Verification
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT + " ✔");
