@@ -4,6 +4,9 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
+// Require Dress Schema
+var Dress = require("./models/dress");
+
 // Create Instance of Express
 var app = express();
 // Sets an initial port. We'll use this later in our listener
@@ -44,23 +47,20 @@ app.get("/", function(req, res) {
 
 
 // Testing MongoDB
-// app.get("/", function(req, res) {
+app.get("/product", function(req, res) {
 
-//   // We will find all the records, sort it in descending order, then limit the records to 5
-//   History.find({}).sort([
-//     ["date", "descending"]
-//   ]).limit(5).exec(function(err, doc) {
-//     if (err) {
-//       console.log(err);
-//     }
-//     else {
-//       res.send(doc);
-//     }
-//   });
-// });
-
-
-
+  // We will find all the records, sort it in descending order, then limit the records to 5
+  Dress.find({}).sort([
+    ["color", "size"]
+  ]).limit(5).exec(function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
 
 
 
