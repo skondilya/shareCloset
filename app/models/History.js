@@ -15,7 +15,7 @@ var HistorySchema = new Schema({
     type: Date
   },
   price: {
-    type: 100
+    type: Number
   }
 });
 
