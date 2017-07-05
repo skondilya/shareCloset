@@ -5,7 +5,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Require Dress Schema
-var Dress = require("./models/dress");
+var Dress = require("./app/models/dress");
 
 // Create Instance of Express
 var app = express();
