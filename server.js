@@ -24,7 +24,9 @@ app.use(express.static("./public"));
 // -------------------------------------------------
 //MONGO DB
 
-//NEED TO ADD MLAB CONFIGURATION!
+
+mongoose.Promise = global.Promise;
+
 // MongoDB configuration (Change this URL to your own DB)
 mongoose.connect("mongodb://heroku_hz1dhlcg:po405n3t0ulo0isdv0g7p7mlt@ds145892.mlab.com:45892/heroku_hz1dhlcg", {useMongoClient: true});
 var db = mongoose.connection;
@@ -46,13 +48,13 @@ app.get("/", function(req, res) {
 });
 
 
-// Testing MongoDB
+// This is the route we will send GET requests to retrieve our most recent click data.
+// We will call this route the moment our page gets rendered
 app.get("/product", function(req, res) {
 
-  // We will find all the records, sort it in descending order, then limit the records to 5
-  Dress.find({}).sort([
-    ["color", "size"]
-  ]).limit(5).exec(function(err, doc) {
+  // This GET request will search for the latest clickCount
+  Dress.find({}).exec(function(err, doc) {
+
     if (err) {
       console.log(err);
     }
@@ -62,6 +64,32 @@ app.get("/product", function(req, res) {
   });
 });
 
+// This is the route we will send POST requests to save each click.
+// We will call this route the moment the "click" or "reset" button is pressed.
+app.post("/product", function(req, res) {
+
+  var user_nameID = req.body.user_name;
+  var color = req.body.color;
+
+  // Note how this route utilizes the findOneAndUpdate function to update the clickCount
+  // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
+  // If included, Mongoose will create a new document matching the description if one is not found
+  Dress.findOneAndUpdate({
+    user_name: user_name
+  }, {
+    $set: {
+      color: color
+    }
+  }, { upsert: true }).exec(function(err) {
+
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send("Updated Click Count!");
+    }
+  });
+});
 
 
 

@@ -23,5 +23,5 @@ var DressSchema = new Schema({
 
 
 // export module to use in server.js
-var Dress = mongoose.model("Dress", DressesSchema);
+var Dress = mongoose.model("Dress", DressSchema);
 module.exports = Dress;
