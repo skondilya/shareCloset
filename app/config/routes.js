@@ -42,5 +42,5 @@ module.exports = (
       <IndexRoute component={productFeed} />
 
     </Route>
-    </Router>
+  </Router>
 );

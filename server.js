@@ -37,6 +37,34 @@ db.once("openUri()", function() {
 
 // -------------------------------------------------
 
+// Main "/" Route. This will redirect the user to our rendered React application
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+
+// Testing MongoDB
+// app.get("/", function(req, res) {
+
+//   // We will find all the records, sort it in descending order, then limit the records to 5
+//   History.find({}).sort([
+//     ["date", "descending"]
+//   ]).limit(5).exec(function(err, doc) {
+//     if (err) {
+//       console.log(err);
+//     }
+//     else {
+//       res.send(doc);
+//     }
+//   });
+// });
+
+
+
+
+
+
+
 
 // Express Server Start Verification
 app.listen(PORT, function() {
