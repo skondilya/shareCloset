@@ -43,6 +43,25 @@ app.get("/", function(req, res) {
 });
 
 
+// Testing MongoDB
+// app.get("/", function(req, res) {
+
+//   // We will find all the records, sort it in descending order, then limit the records to 5
+//   History.find({}).sort([
+//     ["date", "descending"]
+//   ]).limit(5).exec(function(err, doc) {
+//     if (err) {
+//       console.log(err);
+//     }
+//     else {
+//       res.send(doc);
+//     }
+//   });
+// });
+
+
+
+
 
 
 
