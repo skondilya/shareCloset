@@ -4,12 +4,8 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-<<<<<<< HEAD
 // Require Dress Schema
 
-=======
-// Require Dress Schema by path
->>>>>>> 3075f2687d3cc206e2ce0dc296910c7ee12c4405
 var Dress = require("./models/Dress");
 
 
@@ -49,8 +45,6 @@ db.once("openUri()", function() {
 });
 ///////////////////////////////////////////////////
 
-<<<<<<< HEAD
-=======
 ///////////////////////////////////////////////////////
 // MLab Connection
 // mongoose.Promise = global.Promise;
@@ -68,7 +62,6 @@ db.once("openUri()", function() {
 //   console.log("Mongoose Connection Successful ✔");
 // });
 ////////////////////////////////////////////////////////
->>>>>>> 3075f2687d3cc206e2ce0dc296910c7ee12c4405
 
 // -------------------------------------------------
 
