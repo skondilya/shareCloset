@@ -2,7 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
-//var mongoose = require("mongoose");
+var mongoose = require("mongoose");
 
 // Require Dress Schema
 var Dress = require("./models/Dress");
@@ -64,7 +64,7 @@ db.once("openUri()", function() {
 
 // Main "/" Route. This will redirect the user to our rendered React application
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 
