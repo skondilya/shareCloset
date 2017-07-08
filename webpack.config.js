@@ -1,9 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
- 
+
 module.exports = {
   entry: 'app.js',
-  output: { path: __dirname, filename: 'bundle.js' },
+  output: { path: __dirname, filename: 'public/bundle.js' },
   watch: true,
   module: {
     loaders: [
@@ -20,7 +20,7 @@ module.exports = {
   resolve: {
       extensions: ['', '.js','.jsx', '.ts']
   },
-  plugins: [ 
+  plugins: [
     new webpack.DefinePlugin({
       'process.env':{
         'NODE_ENV': JSON.stringify('production')
