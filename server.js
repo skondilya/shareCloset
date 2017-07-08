@@ -29,17 +29,11 @@ app.use(express.static("./public"));
 //Local host url Connection
 mongoose.Promise = global.Promise;
 
-<<<<<<< HEAD
 //local host mongo connect url
 var url = "mongodb://localhost:27017/dresses"
 mongoose.connect(url);
 
 // MongoDB configuration (Change this URL to your own DB)
-=======
-
-// MongoDB configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://heroku_hz1dhlcg:po405n3t0ulo0isdv0g7p7mlt@ds145892.mlab.com:45892/heroku_hz1dhlcg/share_closetdb -u atrier - p password", {useMongoClient: true});
->>>>>>> 3d6527fe5e87d83b7254b404b553fa030b93afc3
 var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -108,17 +102,11 @@ app.post("/product", function(req, res) {
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
   // If included, Mongoose will create a new document matching the description if one is not found
   Dress.findOneAndUpdate({
-<<<<<<< HEAD
+
     user_nameID: user_nameID
   }, {
     $set: {
       user_name: user_name
-=======
-    user_name: user_name
-  }, {
-    $set: {
-      color: color
->>>>>>> 3d6527fe5e87d83b7254b404b553fa030b93afc3
     }
   }, { upsert: true }).exec(function(err) {
 
