@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import CartScrollBar from './CartScrollBar';
+// import Counter from './Counter';
+import EmptyCart from '../empty-states/EmptyCart';
+import CSSTransitionGroup from 'react-transition-group/CSSTransition';
 
-
-
-class header extends Component{
+class Header extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -74,4 +76,4 @@ class header extends Component{
     }
 }
 
-export default header;
+export default Header;

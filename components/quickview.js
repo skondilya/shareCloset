@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class quickview extends Component{
+class QuickView extends Component{
 	constructor(props){
 		super(props);
 	}
@@ -23,4 +23,4 @@ class quickview extends Component{
     }
 }
 
-export default quickview;
+export default QuickView;

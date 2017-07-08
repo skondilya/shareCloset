@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Product from './product';
-// import LoadingProducts from '../loaders/Products';
-// import NoResults from "../empty-states/NoResults";
-// import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import Product from './Product';
+import LoadingProducts from '../loaders/Products';
+import NoResults from "../empty-states/NoResults";
+import CSSTransitionGroup from 'react-transition-group/CSSTransition';
 
-class products extends Component{
+class Products extends Component{
 	constructor(){
 		super();
 	}
@@ -49,4 +49,4 @@ class products extends Component{
 	}
 }
 
-export default products;
+export default Products;

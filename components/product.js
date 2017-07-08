@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-// import counter from './counter';
+import Counter from './Counter';
 
-class product extends Component{
+class Product extends Component{
 	constructor(props){
 		super(props);
         this.state = {
@@ -65,4 +65,4 @@ class product extends Component{
     }
 }
 
-export default product;
+export default Product;
