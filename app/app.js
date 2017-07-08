@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import header from './components/header';
-import products from './components/products';
-// import Pagination from './components/Pagination';
-import footer from './components/footer';
-import quickview from './components/quickview';
+import Header from './components/Header';
+import Products from './components/Products';
+import Pagination from './components/Pagination';
+import Footer from './components/Footer';
+import QuickView from './components/QuickView';
 
-class root extends Component{
+class App extends Component{
 	constructor(){
 		super();
 		this.state = {
 			products: [],
 			cart: [],
 			totalItems: 0,
-			totalAmount: 0,
+			totalAmount: 0, 
 			term: '',
 			category: '',
 			cartBounce: false,
@@ -86,7 +86,7 @@ class root extends Component{
 		});
 		setTimeout(function(){
              this.setState({cartBounce:false});
-        }.bind(this),1000);
+        }.bind(this),1000);  
 		this.sumTotalItems(this.state.cart);
 		this.sumTotalAmount(this.state.cart);
 	}
@@ -105,7 +105,7 @@ class root extends Component{
 		let cart = this.state.cart;
 		return cart.some(function(item) {
 			return item.id === productID;
-		});
+		}); 
 	}
 	sumTotalItems(){
         let total = 0;
@@ -156,7 +156,7 @@ class root extends Component{
 	render(){
 		return(
 			<div className="container">
-				<header
+				<Header
 					cartBounce={this.state.cartBounce}
 					total={this.state.totalAmount}
 					totalItems={this.state.totalItems}
@@ -169,7 +169,7 @@ class root extends Component{
 					updateQuantity={this.updateQuantity}
 					productQuantity={this.state.moq}
 				/>
-				<products
+				<Products
 					productsList={this.state.products}
 					searchTerm={this.state.term}
 					addToCart={this.handleAddToCart}
@@ -177,14 +177,14 @@ class root extends Component{
 					updateQuantity={this.updateQuantity}
 					openModal={this.openModal}
 				/>
-				<footer />
-				<quickview product={this.state.quickViewProduct} openModal={this.state.modalActive} closeModal={this.closeModal} />
+				<Footer />
+				<QuickView product={this.state.quickViewProduct} openModal={this.state.modalActive} closeModal={this.closeModal} />
 			</div>
 		)
 	}
 }
 
 ReactDOM.render(
-	<root />,
+	<App />,
   	document.getElementById('root')
 );
