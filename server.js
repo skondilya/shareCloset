@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-// Require Dress Schema
+// Require Dress Schema by path
 var Dress = require("./models/Dress");
 
 
@@ -22,10 +22,12 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("style.css"));
 
+
 // -------------------------------------------------
-//MONGO DB
+//MONGODB
 
-
+///////////////////////////////////////////////////////
+//Local host url Connection
 mongoose.Promise = global.Promise;
 
 //local host mongo connect url
@@ -42,8 +44,10 @@ db.on("error", function(err) {
 db.once("openUri()", function() {
   console.log("Mongoose Connection Successful ✔");
 });
+///////////////////////////////////////////////////
 
-//
+///////////////////////////////////////////////////////
+// MLab Connection
 // mongoose.Promise = global.Promise;
 //
 //
@@ -58,7 +62,7 @@ db.once("openUri()", function() {
 // db.once("openUri()", function() {
 //   console.log("Mongoose Connection Successful ✔");
 // });
-
+////////////////////////////////////////////////////////
 
 // -------------------------------------------------
 
