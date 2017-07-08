@@ -4,7 +4,8 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-// Require Dress Schema by path
+// Require Dress Schema
+
 var Dress = require("./models/Dress");
 
 // Create Instance of Express
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-app.use(express.static("style.css"));
+app.use(express.static("./public"));
 
 
 // -------------------------------------------------
@@ -28,11 +29,17 @@ app.use(express.static("style.css"));
 //Local host url Connection
 mongoose.Promise = global.Promise;
 
+<<<<<<< HEAD
 //local host mongo connect url
 var url = "mongodb://localhost:27017/dresses"
 mongoose.connect(url);
 
 // MongoDB configuration (Change this URL to your own DB)
+=======
+
+// MongoDB configuration (Change this URL to your own DB)
+mongoose.connect("mongodb://heroku_hz1dhlcg:po405n3t0ulo0isdv0g7p7mlt@ds145892.mlab.com:45892/heroku_hz1dhlcg/share_closetdb -u atrier - p password", {useMongoClient: true});
+>>>>>>> 3d6527fe5e87d83b7254b404b553fa030b93afc3
 var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -66,15 +73,17 @@ db.once("openUri()", function() {
 
 // Main "/" Route. This will redirect the user to our rendered React application
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "./public/index.html");
 });
 
 
 // This is the route we will send GET requests to retrieve our most recent click data.
 // We will call this route the moment our page gets rendered
 app.get("/product", function(req, res) {
+
   // This GET request will search for the latest clickCount
   Dress.find({}).exec(function(err, doc) {
+
     if (err) {
       console.log(err);
     }
@@ -87,7 +96,7 @@ app.get("/product", function(req, res) {
 // This is the route we will send POST requests to save each click.
 // We will call this route the moment the "click" or "reset" button is pressed.
 app.post("/product", function(req, res) {
-  console.log('req.body is', req.body);
+
   var user_nameID = req.body.user_name;
   var color = req.body.color;
   var size = req.body.size;
@@ -99,10 +108,17 @@ app.post("/product", function(req, res) {
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
   // If included, Mongoose will create a new document matching the description if one is not found
   Dress.findOneAndUpdate({
+<<<<<<< HEAD
     user_nameID: user_nameID
   }, {
     $set: {
       user_name: user_name
+=======
+    user_name: user_name
+  }, {
+    $set: {
+      color: color
+>>>>>>> 3d6527fe5e87d83b7254b404b553fa030b93afc3
     }
   }, { upsert: true }).exec(function(err) {
 

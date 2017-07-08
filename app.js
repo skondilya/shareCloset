@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Header from './components/Header';
-import Products from './components/Products';
-import Pagination from './components/Pagination';
-import Footer from './components/Footer';
-import QuickView from './components/QuickView';
+import Header from './components/header';
+import Products from './components/products';
+// import Pagination from './components/pagination';
+import Footer from './components/footer';
+import QuickView from './components/quickview';
 
-class App extends Component{
+class app extends Component{
 	constructor(){
 		super();
 		this.state = {
 			products: [],
 			cart: [],
 			totalItems: 0,
-			totalAmount: 0, 
+			totalAmount: 0,
 			term: '',
 			category: '',
 			cartBounce: false,
@@ -86,7 +86,7 @@ class App extends Component{
 		});
 		setTimeout(function(){
              this.setState({cartBounce:false});
-        }.bind(this),1000);  
+        }.bind(this),1000);
 		this.sumTotalItems(this.state.cart);
 		this.sumTotalAmount(this.state.cart);
 	}
@@ -105,7 +105,7 @@ class App extends Component{
 		let cart = this.state.cart;
 		return cart.some(function(item) {
 			return item.id === productID;
-		}); 
+		});
 	}
 	sumTotalItems(){
         let total = 0;
@@ -156,7 +156,7 @@ class App extends Component{
 	render(){
 		return(
 			<div className="container">
-				<Header
+				<header
 					cartBounce={this.state.cartBounce}
 					total={this.state.totalAmount}
 					totalItems={this.state.totalItems}
@@ -169,7 +169,7 @@ class App extends Component{
 					updateQuantity={this.updateQuantity}
 					productQuantity={this.state.moq}
 				/>
-				<Products
+				<products
 					productsList={this.state.products}
 					searchTerm={this.state.term}
 					addToCart={this.handleAddToCart}
@@ -177,7 +177,7 @@ class App extends Component{
 					updateQuantity={this.updateQuantity}
 					openModal={this.openModal}
 				/>
-				<Footer />
+				<footer />
 				<QuickView product={this.state.quickViewProduct} openModal={this.state.modalActive} closeModal={this.closeModal} />
 			</div>
 		)
@@ -185,6 +185,6 @@ class App extends Component{
 }
 
 ReactDOM.render(
-	<App />,
+	<app />,
   	document.getElementById('root')
 );
