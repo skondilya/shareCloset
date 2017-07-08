@@ -7,12 +7,10 @@ var mongoose = require("mongoose");
 // Require Dress Schema by path
 var Dress = require("./models/Dress");
 
-
 // Create Instance of Express
 var app = express();
 // Sets an initial port. We'll use this later in our listener
 var PORT = process.env.PORT || 8080;
-
 
 // Run Morgan for Logging
 app.use(bodyParser.json());
@@ -32,9 +30,9 @@ mongoose.Promise = global.Promise;
 
 //local host mongo connect url
 var url = "mongodb://localhost:27017/dresses"
+mongoose.connect(url);
 
 // MongoDB configuration (Change this URL to your own DB)
-mongoose.connect(url);
 var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -74,7 +72,6 @@ app.get("/", function(req, res) {
 
 // This is the route we will send GET requests to retrieve our most recent click data.
 // We will call this route the moment our page gets rendered
-
 app.get("/product", function(req, res) {
   // This GET request will search for the latest clickCount
   Dress.find({}).exec(function(err, doc) {
@@ -93,16 +90,19 @@ app.post("/product", function(req, res) {
   console.log('req.body is', req.body);
   var user_nameID = req.body.user_name;
   var color = req.body.color;
+  var size = req.body.size;
+  var year = req.body.year;
+  var price = req.body.price
+
 
   // Note how this route utilizes the findOneAndUpdate function to update the clickCount
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
   // If included, Mongoose will create a new document matching the description if one is not found
   Dress.findOneAndUpdate({
-    user_name: user_nameID
+    user_nameID: user_nameID
   }, {
     $set: {
-      user_name: user_nameID,
-      color: color
+      user_name: user_name
     }
   }, { upsert: true }).exec(function(err) {
 
@@ -114,7 +114,9 @@ app.post("/product", function(req, res) {
     }
   });
 });
+  
 
+// -------------------------------------------------
 
 // Express Server Start Verification
 app.listen(PORT, function() {
