@@ -102,7 +102,6 @@ app.post("/product", function(req, res) {
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
   // If included, Mongoose will create a new document matching the description if one is not found
   Dress.findOneAndUpdate({
-
     user_nameID: user_nameID
   }, {
     $set: {
