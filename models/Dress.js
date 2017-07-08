@@ -1,10 +1,13 @@
-// Dependencies
+// Mongoose Dependencies
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-// New instance
+// Dresses for sale, creates new instance
 var DressSchema = new Schema({
   user_name: {
+    type: Number
+  },
+  user_nameID: {
     type: String 
   },
   color: {
@@ -21,7 +24,8 @@ var DressSchema = new Schema({
   }
 });
 
-
-// export module to use in server.js
+// Creates the model 
 var Dress = mongoose.model("Dress", DressSchema);
+
+// Exports for use elsewhere
 module.exports = Dress;
