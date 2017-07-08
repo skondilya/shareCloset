@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Header from './components/header';
-import Products from './components/products';
-// import Pagination from './components/pagination';
-import Footer from './components/footer';
-import QuickView from './components/quickview';
+import Header from './components/Header';
+import Products from './components/Products';
+import Pagination from './components/Pagination';
+import Footer from './components/Footer';
+import QuickView from './components/QuickView';
 
-class app extends Component{
+class App extends Component{
 	constructor(){
 		super();
 		this.state = {
@@ -156,7 +156,7 @@ class app extends Component{
 	render(){
 		return(
 			<div className="container">
-				<header
+				<Header
 					cartBounce={this.state.cartBounce}
 					total={this.state.totalAmount}
 					totalItems={this.state.totalItems}
@@ -169,7 +169,7 @@ class app extends Component{
 					updateQuantity={this.updateQuantity}
 					productQuantity={this.state.moq}
 				/>
-				<products
+				<Products
 					productsList={this.state.products}
 					searchTerm={this.state.term}
 					addToCart={this.handleAddToCart}
@@ -177,7 +177,7 @@ class app extends Component{
 					updateQuantity={this.updateQuantity}
 					openModal={this.openModal}
 				/>
-				<footer />
+				<Footer />
 				<QuickView product={this.state.quickViewProduct} openModal={this.state.modalActive} closeModal={this.closeModal} />
 			</div>
 		)
@@ -185,6 +185,6 @@ class app extends Component{
 }
 
 ReactDOM.render(
-	<app />,
+	<App />,
   	document.getElementById('root')
 );

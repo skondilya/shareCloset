@@ -4,7 +4,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 class CartScrollBar extends Component{
   constructor(props){
     super(props);
-    //this.handleWindowWheel = this.handleWindowWheel.bind(this); 
+    //this.handleWindowWheel = this.handleWindowWheel.bind(this);
   }
   componentDidMount() {
     window.addEventListener("mouseWheel", this.handleWindowWheel.bind(this), false);
@@ -16,7 +16,7 @@ class CartScrollBar extends Component{
   }
   handleWindowWheel(event) {
     console.log("hey ....")
-    //const { top } = this.refs.scrollbars.getValues(); 
+    //const { top } = this.refs.scrollbars.getValues();
     //console.log(top);
     // When the bottom is reached and we're scrolling down, prevent scrolling of the window
     //if (top >= 1 && event.deltaY > 0) event.preventDefault();
