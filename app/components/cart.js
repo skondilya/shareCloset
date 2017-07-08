@@ -1,51 +1,35 @@
-// Include React
-var React = require("react");
 
-var cart = React.createClass({
+import React, {Component} from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 
-	// getInitialState : function(){
-	// 	return {
-	// 		items: [],
-	// 		total : 0,
-	// 		currency : 'USD'
-	// 	}
-	// },
+class cart extends Component{
+  constructor(props){
+    super(props);
+    //this.handleWindowWheel = this.handleWindowWheel.bind(this);
+  }
+  componentDidMount() {
+    window.addEventListener("mouseWheel", this.handleWindowWheel.bind(this), false);
+    console.log("crossed... event")
+  }
+  componentWillUnmount() {
+    console.log("crossed... 2nd event")
+    window.removeEventListener("mouseWheel", this.handleWindowWheel);
+  }
+  handleWindowWheel(event) {
+    console.log("hey ....")
+    //const { top } = this.refs.scrollbars.getValues();
+    //console.log(top);
+    // When the bottom is reached and we're scrolling down, prevent scrolling of the window
+    //if (top >= 1 && event.deltaY > 0) event.preventDefault();
+    //alert("hello");
+  }
+  render(){
+    return(
+      <Scrollbars style={{ width: 360, height: 320 }} ref="scrollbars">
+        {this.props.children}
+      </Scrollbars>
+    )
+  }
+}
 
-	// addItem : function(e,item){
-	// 	this.state.items.push(item);
-	// 	this.counttotal();
-	// },
-
-	// removeItem : function(e,itemId){
-	// 	var itemindex;
-	// 	this.state.items.some(function(item,index){
-	// 		if(item.id ==itemId){
-	// 			itemindex = index;
-	// 			return true;
-	// 		}
-	// 	})
-	// 	if(typeof itemId != 'undefined'){
-	// 		this.state.items.splice(itemindex ,1);
-	// 	}
-	// },
-	// countTotal : function(){
-	// 	var total = 0;
-	// 	this.state.items.forEach(function(item , index){
-	// 		total = total + item.price;
-	// 	})
-	// 	this.setstate({total : total})
-	// },
-
-	render : function(){
-		// var items = this.state.items.map(function(item){
-		return (
-				<p>Hello World!</p>
-
-
-		)
-	
-	}
-});
-
-// Export the component back for use in other files
-module.exports = cart;
+export default cart;

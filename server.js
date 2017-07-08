@@ -11,7 +11,7 @@ var Dress = require("./app/models/Dress");
 // Create Instance of Express
 var app = express();
 // Sets an initial port. We'll use this later in our listener
-var PORT = process.env.PORT || 3000; 
+var PORT = process.env.PORT || 8080;
 
 
 // Run Morgan for Logging
@@ -42,6 +42,22 @@ db.on("error", function(err) {
 db.once("openUri()", function() {
   console.log("Mongoose Connection Successful ✔");
 });
+
+//
+// mongoose.Promise = global.Promise;
+//
+//
+// // MongoDB configuration (Change this URL to your own DB)
+// mongoose.connect("mongodb://heroku_hz1dhlcg:po405n3t0ulo0isdv0g7p7mlt@ds145892.mlab.com:45892/heroku_hz1dhlcg/share_closetdb -u atrier - p password", {useMongoClient: true});
+// var db = mongoose.connection;
+//
+// db.on("error", function(err) {
+//   console.log("Mongoose Error: ", err);
+// });
+//
+// db.once("openUri()", function() {
+//   console.log("Mongoose Connection Successful ✔");
+// });
 
 
 // -------------------------------------------------
