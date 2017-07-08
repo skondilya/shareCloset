@@ -4,8 +4,12 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
+<<<<<<< HEAD
 // Require Dress Schema
 
+=======
+// Require Dress Schema by path
+>>>>>>> 3075f2687d3cc206e2ce0dc296910c7ee12c4405
 var Dress = require("./models/Dress");
 
 
@@ -23,10 +27,12 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
 
+
 // -------------------------------------------------
-//MONGO DB
+//MONGODB
 
-
+///////////////////////////////////////////////////////
+//Local host url Connection
 mongoose.Promise = global.Promise;
 
 
@@ -41,7 +47,28 @@ db.on("error", function(err) {
 db.once("openUri()", function() {
   console.log("Mongoose Connection Successful ✔");
 });
+///////////////////////////////////////////////////
 
+<<<<<<< HEAD
+=======
+///////////////////////////////////////////////////////
+// MLab Connection
+// mongoose.Promise = global.Promise;
+//
+//
+// // MongoDB configuration (Change this URL to your own DB)
+// mongoose.connect("mongodb://heroku_hz1dhlcg:po405n3t0ulo0isdv0g7p7mlt@ds145892.mlab.com:45892/heroku_hz1dhlcg/share_closetdb -u atrier - p password", {useMongoClient: true});
+// var db = mongoose.connection;
+//
+// db.on("error", function(err) {
+//   console.log("Mongoose Error: ", err);
+// });
+//
+// db.once("openUri()", function() {
+//   console.log("Mongoose Connection Successful ✔");
+// });
+////////////////////////////////////////////////////////
+>>>>>>> 3075f2687d3cc206e2ce0dc296910c7ee12c4405
 
 // -------------------------------------------------
 
