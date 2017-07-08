@@ -11,7 +11,7 @@ var Dress = require("./models/Dress");
 // Create Instance of Express
 var app = express();
 // Sets an initial port. We'll use this later in our listener
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // Run Morgan for Logging
 app.use(bodyParser.json());
