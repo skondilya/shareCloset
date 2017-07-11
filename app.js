@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Header from './components/Header';
+import Header from './components/header';
 import Products from './components/Products';
 // import Pagination from './components/Pagination';
-import Footer from './components/Footer';
-import QuickView from './components/QuickView';
+import Footer from './components/footer';
+import QuickView from './components/quickview';
 
 class App extends Component{
 	constructor(){
@@ -37,10 +37,10 @@ class App extends Component{
 	// Fetch Initial Set of Products from external API
 	getProducts(){
 		//For Localhost use the below url
-		// const url = "./products.json";
+		 const url = "./products.json";
 
 		// For Production use the below url
-		const url ="https://quarkbackend.com/getfile/sivadass/products";
+		// const url ="https://quarkbackend.com/getfile/sivadass/products";
 
 		axios.get(url)
 			.then(response => {
