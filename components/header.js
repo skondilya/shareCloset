@@ -62,7 +62,7 @@ class Header extends Component{
 			view = <CSSTransitionGroup transitionName="fadeIn" transitionEnterTimeout={500} transitionLeaveTimeout={300} component="ul" className="cart-items">{cartItems}</CSSTransitionGroup>
 		}
         return(
-            <header>
+            <Header>
                 <div className="container">
                     <div className="brand">
                         <img className="logo" src="https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png" alt="Veggy Brand Logo"/>
@@ -71,7 +71,7 @@ class Header extends Component{
 
                     </div>
                 </div>
-            </header>
+            </Header>
         )
     }
 }
