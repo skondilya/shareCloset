@@ -65,7 +65,7 @@ class Header extends Component{
             <header>
                 <div className="container">
                     <div className="brand">
-                        <img className="logo" src="" alt="Veggy Brand Logo"/>
+                        <img className="logo" src="" alt="ShareCloset Brand Logo"/>
                         <p>header</p>
 
 
