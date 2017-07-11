@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CartScrollBar from './CartScrollBar';
-import Counter from './Counter';
+import Counter from './counter';
 import EmptyCart from '../empty-states/EmptyCart';
 import CSSTransitionGroup from 'react-transition-group/CSSTransition';
 
@@ -62,15 +62,16 @@ class Header extends Component{
 			view = <CSSTransitionGroup transitionName="fadeIn" transitionEnterTimeout={500} transitionLeaveTimeout={300} component="ul" className="cart-items">{cartItems}</CSSTransitionGroup>
 		}
         return(
-            <Header>
+            <header>
                 <div className="container">
                     <div className="brand">
+                        <img className="logo" src="" alt="ShareCloset Brand Logo"/>
                         <p>header</p>
 
 
                     </div>
                 </div>
-            </Header>
+            </header>
         )
     }
 }
