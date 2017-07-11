@@ -27,11 +27,5 @@ var DressSchema = new Schema({
 // Creates the model 
 var Dress = mongoose.model("Dress", DressSchema);
 
-// logs json to the console
-Dress.find(function (err, dresses) {
-  if (err) return console.error(err);
-  console.log(dresses);
-})
-
 // Exports for use elsewhere
 module.exports = Dress;

@@ -63,7 +63,6 @@ db.once("openUri()", function() {
 ////////////////////////////////////////////////////////
 
 // -------------------------------------------------
-//ROUTES for data
 
 // Main "/" Route. This will redirect the user to our rendered React application
 app.get("/", function(req, res) {
@@ -117,6 +116,7 @@ app.post("/product", function(req, res) {
     }
   });
 });
+
 
 // -------------------------------------------------
 
