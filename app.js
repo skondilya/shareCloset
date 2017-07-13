@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Header from './components/header';
+import Header from './components/Header';
 import Products from './components/Products';
 // import Pagination from './components/Pagination';
-import Footer from './components/footer';
-import QuickView from './components/quickview';
+import Footer from './components/Footer';
+import QuickView from './components/QuickView';
 
 class App extends Component{
 	constructor(){

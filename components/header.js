@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CartScrollBar from './CartScrollBar';
-import Counter from './counter';
+import Counter from './Counter';
 import EmptyCart from '../empty-states/EmptyCart';
 import CSSTransitionGroup from 'react-transition-group/CSSTransition';
 
@@ -62,16 +62,53 @@ class Header extends Component{
 			view = <CSSTransitionGroup transitionName="fadeIn" transitionEnterTimeout={500} transitionLeaveTimeout={300} component="ul" className="cart-items">{cartItems}</CSSTransitionGroup>
 		}
         return(
-            <header>
-                <div className="container">
-                    <div className="brand">
-                        <img className="logo" src="" alt="ShareCloset Brand Logo"/>
-                        <p>header</p>
 
-
+          <header>
+              <div className="container">
+                  <div className="brand">
+                      <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/S-Bahn-Logo.svg/2000px-S-Bahn-Logo.svg.png" alt="Share Closet Logo"/>
+                  </div>
+                  <div className="search">
+                    <a className="mobile-search" href="#" onClick={this.handleMobileSearch.bind(this)}><img src="https://res.cloudinary.com/sivadass/image/upload/v1494756966/icons/search-green.png" alt="search"/></a>
+                      <form action="#" method="get" className={this.state.mobileSearch ? "search-form active" : "search-form"}>
+                      <a className="back-button" href="#" onClick={this.handleSearchNav.bind(this)}><img src="https://res.cloudinary.com/sivadass/image/upload/v1494756030/icons/back.png" alt="back"/></a>
+                      <input type="search" ref="searchBox" placeholder="Search for Dresses" className="search-keyword" onChange={this.props.handleSearch}/>
+                      <button className="search-button" type="submit" onClick={this.handleSubmit.bind(this)}></button>
+                      </form>
                     </div>
-                </div>
-            </header>
+
+                  <div className="cart">
+                      <div className="cart-info">
+                          <table>
+                              <tbody>
+                                  <tr>
+                                      <td>No. of items</td>
+                                      <td>:</td>
+                                      <td><strong>{this.props.totalItems}</strong></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Sub Total</td>
+                                      <td>:</td>
+                                      <td><strong>{this.props.total}</strong></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                      <a className="cart-icon" href="#" onClick={this.handleCart.bind(this)}>
+                          <img className={this.props.cartBounce ? "tada" : " "} src="https://res.cloudinary.com/sivadass/image/upload/v1493548928/icons/bag.png" alt="Cart"/>
+                          {this.props.totalItems ? <span className="cart-count">{this.props.totalItems}</span> : "" }
+                      </a>
+                      <div className={this.state.showCart ? "cart-preview active" : "cart-preview"}>
+                          <CartScrollBar>
+                              {view}
+                          </CartScrollBar>
+                          <div className="action-block">
+                              <button type="button" className={this.state.cart.length > 0 ? " " : "disabled"}>PROCEED TO CHECKOUT</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </header>
         )
     }
 }
