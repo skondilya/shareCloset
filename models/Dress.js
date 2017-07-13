@@ -56,7 +56,7 @@ module.exports.updateDress = (id, dress, options, callback) => {
   Dress.findOneAndUpdate(query, update, options, callback);
 }
 
-// Delete Book
+// Delete Dress
 module.exports.removeDress = (id, callback) => {
   var query = {_id: id};
   Dress.remove(query, callback);
