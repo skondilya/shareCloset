@@ -23,7 +23,6 @@ app.use(express.static("./public"));
 
 // -------------------------------------------------
 //MONGODB
-
 ///////////////////////////////////////////////////////
 //Local host url Connection
 mongoose.Promise = global.Promise;
@@ -64,13 +63,13 @@ db.once("openUri()", function() {
 
 // -------------------------------------------------
 
-// Main "/" Route. This will redirect the user to our rendered React application
+// Main GET "/" Route. This will redirect the user to our rendered React application
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "./public/index.html");
 });
 
 
-// This is the route we will send GET requests to retrieve our most recent click data.
+// Product GET "/product" Route. is the route we will send GET requests to retrieve our most recent click data.
 // We will call this route the moment our page gets rendered
 app.get("/product", function(req, res) {
 
@@ -86,7 +85,8 @@ app.get("/product", function(req, res) {
   });
 });
 
-// This is the route we will send POST requests to save each click.
+
+// Product POST This is the route we will send POST requests to save each click.
 // We will call this route the moment the "click" or "reset" button is pressed.
 app.post("/product", function(req, res) {
 
@@ -119,7 +119,6 @@ app.post("/product", function(req, res) {
 
 
 // -------------------------------------------------
-
 // Express Server Start Verification
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT + " ✔");
