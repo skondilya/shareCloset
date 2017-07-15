@@ -10,7 +10,7 @@ const Footer = (props) =>{
                 <span>  /  </span>
                 <a href="https://github.com/skondilya" target="_blank">Shreya Kondilya</a>
             </p>
-            <p>&copy; 2017 <strong>ShareCloset</strong> - Your destination for prom dresses</p>
+            <p>&copy; 2017 <strong>ShareCloset</strong> - Your destination for lightly used prom dresses</p>
         </footer>
     )
 };
