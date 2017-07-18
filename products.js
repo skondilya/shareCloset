@@ -3,7 +3,7 @@ const data = [
         "id": 1,
         "name": "Dress 1",
         "price": 120,
-        "image": "./public/css/images/Picture2.jpg",
+        "image": "public/css/images/Picture2.jpg",
         "category": "dresses"
     },
     {
