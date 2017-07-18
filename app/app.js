@@ -6,9 +6,11 @@ import Products from './components/Products';
 // import Pagination from './components/Pagination';
 import Footer from './components/Footer';
 import QuickView from './components/QuickView';
+import data from '../products.js';
 
 class App extends Component{
 	constructor(){
+		console.log("app.js constructor invoked")
 		super();
 		this.state = {
 			products: [],
@@ -33,21 +35,18 @@ class App extends Component{
 		this.handleRemoveProduct = this.handleRemoveProduct.bind(this);
 		this.openModal = this.openModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
+		this.getProducts = this.getProducts.bind(this);
+
 	}
 	// Fetch Initial Set of Products from external API
 	getProducts(){
 		//For Localhost use the below url
-		const url = "./products.json";
-
+		// const url = "../products.json";
+		// console.log(url);
 		// For Production use the below url
 		// const url ="https://quarkbackend.com/getfile/sivadass/products";
 
-		axios.get(url)
-			.then(response => {
-				this.setState({
-					products : response.data
-				})
-			})
+		this.setState({products: data});
 	}
 	componentWillMount(){
 		this.getProducts();
