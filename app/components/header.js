@@ -42,7 +42,8 @@ class Header extends Component{
         cartItems = this.state.cart.map(product =>{
 			return(
 				<li className="cart-item" key={product.name}>
-                    <img className="product-image" src={product.image} />
+                    <img className="product-image" src={require('../../public/css/images/Dress1.jpg')} />
+
                     <div className="product-info">
                         <p className="product-name">{product.name}</p>
                         <p className="product-price">{product.price}</p>

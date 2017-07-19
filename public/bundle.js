@@ -24080,7 +24080,7 @@
 	                return _react2.default.createElement(
 	                    'li',
 	                    { className: 'cart-item', key: product.name },
-	                    _react2.default.createElement('img', { className: 'product-image', src: product.image }),
+	                    _react2.default.createElement('img', { className: 'product-image', src: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../public/css/images/Dress1.jpg\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) }),
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'product-info' },

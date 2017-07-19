@@ -45,7 +45,7 @@ class App extends Component{
 		// console.log(url);
 		// For Production use the below url
 		// const url ="https://quarkbackend.com/getfile/sivadass/products";
-
+		
 		this.setState({products: data});
 	}
 	componentWillMount(){

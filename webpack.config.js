@@ -14,6 +14,11 @@ module.exports = {
         query: {
           presets: ['es2015','react']
         }
+      },
+      {
+        test: /.jsx?$/,
+        loader: 'css-loader', 
+        options: { url: false} 
       }
     ]
   },
@@ -33,3 +38,4 @@ module.exports = {
     // })
   ]
 };
+
