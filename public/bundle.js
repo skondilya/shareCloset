@@ -64,19 +64,19 @@
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Products = __webpack_require__(239);
+	var _Products = __webpack_require__(240);
 
 	var _Products2 = _interopRequireDefault(_Products);
 
-	var _Footer = __webpack_require__(244);
+	var _Footer = __webpack_require__(245);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
-	var _QuickView = __webpack_require__(245);
+	var _QuickView = __webpack_require__(246);
 
 	var _QuickView2 = _interopRequireDefault(_QuickView);
 
-	var _products = __webpack_require__(246);
+	var _products = __webpack_require__(247);
 
 	var _products2 = _interopRequireDefault(_products);
 
@@ -24080,7 +24080,7 @@
 	                return _react2.default.createElement(
 	                    'li',
 	                    { className: 'cart-item', key: product.name },
-	                    _react2.default.createElement('img', { className: 'product-image', src: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../public/css/images/Dress1.jpg\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) }),
+	                    _react2.default.createElement('img', { className: 'product-image', src: __webpack_require__(239) }),
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'product-info' },
@@ -26937,6 +26937,12 @@
 /* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "8b4599c3706ce8bf50a2dfb145375d86.jpg";
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -26949,15 +26955,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Product = __webpack_require__(240);
+	var _Product = __webpack_require__(241);
 
 	var _Product2 = _interopRequireDefault(_Product);
 
-	var _Products = __webpack_require__(241);
+	var _Products = __webpack_require__(242);
 
 	var _Products2 = _interopRequireDefault(_Products);
 
-	var _NoResults = __webpack_require__(243);
+	var _NoResults = __webpack_require__(244);
 
 	var _NoResults2 = _interopRequireDefault(_NoResults);
 
@@ -27036,7 +27042,7 @@
 	exports.default = Products;
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27163,7 +27169,7 @@
 	exports.default = Product;
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27178,7 +27184,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Product = __webpack_require__(242);
+	var _Product = __webpack_require__(243);
 
 	var _Product2 = _interopRequireDefault(_Product);
 
@@ -27223,7 +27229,7 @@
 	exports.default = LoadingProducts;
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27253,7 +27259,7 @@
 	exports.default = LoadingProduct;
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27293,7 +27299,7 @@
 	exports.default = NoResults;
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27358,7 +27364,7 @@
 	exports.default = Footer;
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27438,7 +27444,7 @@
 	exports.default = QuickView;
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports) {
 
 	"use strict";

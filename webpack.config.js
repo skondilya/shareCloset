@@ -8,17 +8,20 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.css$/,
+        loader: 'css-loader', 
+        options: { url: false} 
+      },
+      { test: /\.(jpg|woff|woff2|eot|ttf|svg)$/, 
+        loader: 'url-loader?limit=100000' 
+      },
+      {
         test: /.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
           presets: ['es2015','react']
         }
-      },
-      {
-        test: /.jsx?$/,
-        loader: 'css-loader', 
-        options: { url: false} 
       }
     ]
   },
