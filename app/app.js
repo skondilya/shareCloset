@@ -175,6 +175,7 @@ class App extends Component{
 					productQuantity={this.state.quantity}
 					updateQuantity={this.updateQuantity}
 					openModal={this.openModal}
+			
 				/>
 				<Footer />
 				<QuickView product={this.state.quickViewProduct} openModal={this.state.modalActive} closeModal={this.closeModal} />

@@ -308,6 +308,7 @@
 						productQuantity: this.state.quantity,
 						updateQuantity: this.updateQuantity,
 						openModal: this.openModal
+
 					}),
 					_react2.default.createElement(_Footer2.default, null),
 					_react2.default.createElement(_QuickView2.default, { product: this.state.quickViewProduct, openModal: this.state.modalActive, closeModal: this.closeModal })
@@ -24080,7 +24081,14 @@
 	                return _react2.default.createElement(
 	                    'li',
 	                    { className: 'cart-item', key: product.name },
-	                    _react2.default.createElement('img', { className: 'product-image', src: __webpack_require__(239) }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'product-image' },
+	                        _react2.default.createElement('img', { src: __webpack_require__(239),
+	                            onLoad: _this2.handleImageLoaded.bind(_this2),
+	                            onError: _this2.handleImageErrored.bind(_this2)
+	                        })
+	                    ),
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'product-info' },
@@ -27454,34 +27462,34 @@
 	});
 	var data = [{
 	    "id": 1,
-	    "name": "Dress 1",
+	    "name": "Red Dress",
 	    "price": 120,
 	    "image": "./public/css/images/Dress1.jpg",
 	    "category": "dresses"
 	}, {
 	    "id": 2,
-	    "name": "Cauliflower - 1 Kg",
-	    "price": 60,
-	    "image": "",
-	    "category": "vegetables"
+	    "name": "Blue Dress",
+	    "price": 130,
+	    "image": "./public/css/images/Dress2.jpg",
+	    "category": "dresses"
 	}, {
 	    "id": 3,
-	    "name": "Cucumber - 1 Kg",
-	    "price": 48,
-	    "image": "",
-	    "category": "vegetables"
+	    "name": "Pink Dress",
+	    "price": 125,
+	    "image": "./public/css/images/Dress3.jpg",
+	    "category": "dresses"
 	}, {
 	    "id": 4,
-	    "name": "Beetroot - 1 Kg",
-	    "price": 32,
-	    "image": "",
-	    "category": "vegetables"
+	    "name": "White Dress",
+	    "price": 150,
+	    "image": "./public/css/images/Dress4.jpg",
+	    "category": "dresses"
 	}, {
 	    "id": 5,
-	    "name": "Carrot - 1 Kg",
-	    "price": 56,
-	    "image": "",
-	    "category": "vegetables"
+	    "name": "Flower Dress",
+	    "price": 180,
+	    "image": "./public/css/images/Dress5.jpg",
+	    "category": "dresses"
 	}];
 
 	exports.default = data;

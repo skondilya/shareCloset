@@ -42,18 +42,23 @@ class Header extends Component{
         cartItems = this.state.cart.map(product =>{
 			return(
 				<li className="cart-item" key={product.name}>
-                    <img className="product-image" src={require('../../public/css/images/Dress1.jpg')} />
+                <div className="product-image">
+                  <img src={require('../../public/css/images/Dress1.jpg')} 
+                    onLoad={this.handleImageLoaded.bind(this)}
+                    onError={this.handleImageErrored.bind(this)}
+                  />  
+                </div>
 
-                    <div className="product-info">
-                        <p className="product-name">{product.name}</p>
-                        <p className="product-price">{product.price}</p>
-                    </div>
-                    <div className="product-total">
-                        <p className="quantity">{product.quantity} {product.quantity > 1 ?"Nos." : "No." } </p>
-                        <p className="amount">{product.quantity * product.price}</p>
-                    </div>
-                    <a className="product-remove" href="#" onClick={this.props.removeProduct.bind(this, product.id)}>×</a>
-                </li>
+                <div className="product-info">
+                    <p className="product-name">{product.name}</p>
+                    <p className="product-price">{product.price}</p>
+                </div>
+                <div className="product-total">
+                    <p className="quantity">{product.quantity} {product.quantity > 1 ?"Nos." : "No." } </p>
+                    <p className="amount">{product.quantity * product.price}</p>
+                </div>
+                <a className="product-remove" href="#" onClick={this.props.removeProduct.bind(this, product.id)}>×</a>
+        </li>
 			)
 		});
         let view;

@@ -12,8 +12,8 @@ module.exports = {
         loader: 'css-loader', 
         options: { url: false} 
       },
-      { test: /\.(jpg|woff|woff2|eot|ttf|svg)$/, 
-        loader: 'url-loader?limit=100000' 
+      { test: /\.(png|jpg)$/, 
+      loader: 'url-loader?limit=8192' 
       },
       {
         test: /.jsx?$/,
